@@ -1,0 +1,15 @@
+class Solution:
+    
+    def equilibriumPoint(self,A, N):
+        n=len(A)
+        if n==1:
+            return 1
+        else:
+            rsum=sum(A)
+            lsum=0
+            for i in range(0,n):
+                rsum=rsum-A[i]
+                if lsum==rsum:
+                    return (i+1)
+                lsum=lsum+A[i]
+            return -1
